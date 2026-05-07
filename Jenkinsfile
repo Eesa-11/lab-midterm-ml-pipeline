@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Fetch Data from GitHub') {
             steps {
-                git branch: 'main', url: 'https://github.com/Arhamhir/lab-mid.git'
+                git branch: 'main', url: 'https://github.com/Eesa-11/lab-midterm-ml-pipeline.git'
             }
         }
         
@@ -23,7 +23,7 @@ pipeline {
                 docker stop ml-api || true
                 docker rm ml-api || true
                 docker build -t ml-api-image .
-                docker run -d --name ml-api -p 8001:8000 ml-api-image
+                docker run -d --name ml-api -p 8000:8000 ml-api-image
                 '''
             }
         }
